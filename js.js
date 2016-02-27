@@ -72,7 +72,7 @@ $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + latitud
       // ### CURRENT WEATHER###
       console.log(currentWeather);
       pick_icon(currentWeather.weather[0].icon);
-      $('.current-weather').html("<div class='half'><h1>" + currentWeather.main.temp.toFixed(1) + " °C" + "</h1>" + "<div class='description'><i class='" + icon + " front-image'></i>" + "<h2>"+ currentWeather.weather[0].description + "</h2></div>" + "<h3><i class='wi wi-humidity'></i> " + currentWeather.main.humidity + "%</h3><h3>" + currentWeather.main.pressure + " Pa</h3></div><div id='right' class='half'><h2 class='city'>" + currentWeather.name + "</h3>" );
+      $('.current-weather').html("<div class='half'><h1>" + currentWeather.main.temp.toFixed(1) + " °C" + "</h1>" + "<div class='description'><i class='" + icon + " front-image'></i>" + "<h2>"+ currentWeather.weather[0].description + "</h2></div>" + "<h3><i class='wi wi-humidity'></i> " + currentWeather.main.humidity + "%</h3><h3>" + currentWeather.main.pressure + " hPa</h3></div><div id='right' class='half'><h2 class='city'>" + currentWeather.name + "</h3>" );
 
       // ### CURRENT WEATHER FORECAST ###
       console.log(currentWeatherForecast);
