@@ -29,6 +29,7 @@ var weatherForecast;
       console.log(latitude);
       console.log(longitude);
 
+function weather() {
   // ############## WEATHER FORECAST #########
 $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + latitude + "&lon="+longitude +"&appid=322fb42145c8a682b9abc1d2c1f8f41c&cnt=4&units=metric&", function(json) {
     weatherForecast = json;
@@ -44,12 +45,16 @@ $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + latitud
 
     }); // end of 2nd getJSON
 }); // enf of 1st getJSON
+} // end of function weather
+
+weather();
 
     // #### HIDE OVERLAY #####
     $('.overlay').hide();
 
     // ### ON AJAX STOP ######
     $(document).ajaxStop(function() {
+
       // ### WEATHER FORECAST ###
       var tempArr = weatherForecast.list;
       // first item is current day, we don't need to forecast current day, so we splice the array
@@ -104,25 +109,34 @@ function pick_icon(json_icon) {
     case '02n':
       icon = 'wi wi-night-alt-cloudy';
       break;
-    case '03d' || '03n':
+    case '03d':
+    case '03n':
       icon = 'wi wi-cloud';
       break;
-    case '04d' || '04n':
+    case '04d':
+    case '04n':
       icon = 'wi wi-cloudy';
       break;
-    case '09d' || '09n':
+    case '09d':
+    case '09n':
       icon = 'wi wi-showers';
       break;
-    case '10d' || '10n':
+    case '10d':
       icon = 'wi wi-rain';
       break;
-    case '11d' || '11n':
+    case '10n':
+      icon = 'wi wi-rain';
+      break;
+    case '11d':
+    case '11n':
       icon = 'wi wi-thunderstorm';
       break;
-    case '13d' || '13n':
+    case '13d':
+    case '13n':
       icon = 'wi wi-snow';
       break;
-    case '50d' || '50n':
+    case '50d':
+    case '50n':
       icon = 'wi wi-fog';
       break;
       default:
